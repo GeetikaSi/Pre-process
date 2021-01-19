@@ -1,4 +1,4 @@
-# Pre-processing pipeling
+# Pre-processing pipeline
 
 The pre-processing pipeline generates a processed .CSV file for data from wearable devices.
 
