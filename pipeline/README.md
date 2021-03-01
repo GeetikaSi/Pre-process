@@ -43,6 +43,22 @@ Run `Complete - Browse file` file or 'Complete - User path`
    
 4. The processed .csv file will be stored in the current working directory.
 
+
+#### If you prefer using the terminal to run the code, please follow the following steps after you clone the repository:
+
+```
+jupyter nbconvert --to python Complete\ -\ Browse\ file.ipynb 
+```
+or 
+```
+jupyter nbconvert --to python Complete\ -\ User\ path.ipynb
+```
+
+Then run the file from terminal using:
+```
+python Complete\ -\ Browse\ file.py or python Complete\ -\ User\ path.py
+```
+
 ### Functions
 
 The pipeline currently uses the following functions.
