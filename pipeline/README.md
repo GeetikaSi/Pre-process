@@ -59,6 +59,11 @@ Then run the file from terminal using:
 ```
 python Complete\ -\ Browse\ file.py or python Complete\ -\ User\ path.py
 ```
+#### If you want to convert a JSON file to a dataframe, please look into the [json_table_convertor.ipynb](./json_table_convertor.ipynb)
+
+1. In this notebook, two situations are discussed based on the sample data provided by the Open_mHealth: https://www.openmhealth.org/documentation/#/schema-docs/schema-library.
+
+2. The convertor code may need to be adjusted based on the structure of the actual data.
 
 ### Functions
 
