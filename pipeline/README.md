@@ -10,6 +10,7 @@ Currently, the pipeline is capable of pre-processing raw data from the following
 5. ECG data stored as a EDF file
 6. Biovotion
 7. Empatica
+8. Data stored as a JSON file
 
 
 ### Steps to use the pipeline
@@ -30,7 +31,7 @@ Run `Complete - Browse file` file or 'Complete - User path`
 
 3. In case of `biovotion`, you will be prompted to enter the Device ID, you can find the same in the file name right after the vital sign name.
    For instance : If the filename is bop_1566404978515_BHR_5cda2e5e70116a01001eb098_1563897600_1563903059.csv, the Device ID is 5cda2e5e70116a01001eb098
-   
+
 4. The processed .csv file will be stored in the current working directory.
 
 #### If using the `Complete - User path` version of the code
@@ -40,16 +41,16 @@ Run `Complete - Browse file` file or 'Complete - User path`
 
 3. In case of `biovotion`, you will be prompted to enter the Device ID, you can find the same in the file name right after the vital sign name.
    For instance : If the filename is bop_1566404978515_BHR_5cda2e5e70116a01001eb098_1563897600_1563903059.csv, the Device ID is 5cda2e5e70116a01001eb098
-   
+
 4. The processed .csv file will be stored in the current working directory.
 
 
 #### If you prefer using the terminal to run the code, please follow the following steps after you clone the repository:
 
 ```
-jupyter nbconvert --to python Complete\ -\ Browse\ file.ipynb 
+jupyter nbconvert --to python Complete\ -\ Browse\ file.ipynb
 ```
-or 
+or
 ```
 jupyter nbconvert --to python Complete\ -\ User\ path.ipynb
 ```
@@ -79,6 +80,8 @@ The pipeline currently uses the following functions.
 | get_filenames | Used by biovotion and empatica to obtain all .csv files in a folder  |
 | preprocess_empatica | Pre-processing function for empatica, used to obtain values of vitals and frequency rate |
 | add_time_empatica | Add time function for empatica, used to add time for each vital sign |
+| import_json | Receive the path of json files and create a dataframe |
+
 
 ##### apple functions:
     main : calls all other functions to process raw data
@@ -102,7 +105,7 @@ The pipeline currently uses the following functions.
     rename_cols : Renames column names of the dataframe
 
 ##### ecg functions:
-    get_data : Processes .EDF file to obtain raw data in a .CSV file. It stores raw data as a .CSV file in the current working directory. 
+    get_data : Processes .EDF file to obtain raw data in a .CSV file. It stores raw data as a .CSV file in the current working directory.
     main : calls all other functions to process raw data
     pre_process_ECG : Drop unnecessary data columns from raw data .CSV file
     add_time : Calculates elapsed and actual time using start time and sampling rate information
@@ -119,6 +122,11 @@ The pipeline currently uses the following functions.
     read_data : Reads all .CSV files data stored in the folder and processes each file. It calculates time using sampling frequency and start time for each file.
     all_dfs : All dataframes are combined to create one single dataframe
     main : calls all other functions to process raw data
+
+#### JSON to dataframe convertor functions:
+    initial_sole_json : Receive the path of the first json file and use this json file to initialize the dataframe.
+    import_new_sole_json : Receive the path of the following json file and append the new json file to the dataframe.
+    import_mul_json : Receive the path of the json file with information of all patient.
 
 ### Continued Development
 
