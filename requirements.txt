@@ -1,0 +1,11 @@
+pandas
+numpy
+matplotlib
+seaborn
+datetime
+pytz
+rowingdata
+mne
+os-sys
+npm
+regex
