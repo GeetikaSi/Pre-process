@@ -9,3 +9,7 @@ mne
 os-sys
 npm
 regex
+requests
+withings-api
+Flask==1.1.1
+requests_oauthlib
